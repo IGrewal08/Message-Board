@@ -1,10 +1,6 @@
 import { Router } from 'express';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
 const indexRouter = Router();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const messages = [
   {
@@ -20,7 +16,7 @@ const messages = [
 ];
 
 indexRouter.get('/', (req, res) => {
-  res.render("index", { messages: messages });
+  res.render('index', { messages: messages });
 });
 
 export default indexRouter;
