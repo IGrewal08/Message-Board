@@ -15,24 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/new', newRouter);
 app.use('/', indexRouter);
 
-
-app.post('/new', (req, res) => {
-    //const message = req.body;
-
-    //console.log(message);
-
-    res.send('test message');
-
-    /*
-    let messageObj = {
-        text: message.messageText,
-        user: message.nameText,
-        added: new Date(),
-    }
-
-    messages.push(messageObj);
-    */
-   res.redirect("/");
+app.use((err, req, res, next) => {
+  res.status(err.statusCode || 500).send(err);
 });
 
 const PORT = 8080;
