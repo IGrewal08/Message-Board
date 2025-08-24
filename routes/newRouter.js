@@ -1,8 +1,10 @@
-import { Router } from "express";
+import { Router } from 'express';
 
 const newRouter = Router();
 
-newRouter.get("/", (res, req) => {
-    res.send("Sample from new Route");
-    //res.sendFile(__dirname + "");
+newRouter.get('/', (req, res) => {
+  res.send("Sample from new Route");
+  //res.sendFile(__dirname + "");
 });
+
+export default newRouter;
