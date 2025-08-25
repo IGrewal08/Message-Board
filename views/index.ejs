@@ -14,6 +14,10 @@
         <%= message.text %><br> 
         <%= message.added %>
       </li>
+      <%
+        const customLink = '/' + message.user;
+      %>
+      <a href="/<%= message.user %>"<%= message.user %>>Detail</a>
       <% }) %>
     </ul>
   </body>

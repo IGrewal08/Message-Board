@@ -20,6 +20,12 @@ indexRouter.get('/', (req, res) => {
   res.render('index', { messages: messages });
 });
 
+indexRouter.get('/:user', (req, res) => {
+  const myQuery = req.params.user;
+  const selectedMessage = messages.filter((message) => myQuery === message.user)[0];
+  res.render('detail', { selectedMessage: selectedMessage });
+})
+
 indexRouter.post('/new', (req, res) => {
   const message = req.body;
   messages.push({ text: message.messageText, user: message.nameText, added: new Date() });
