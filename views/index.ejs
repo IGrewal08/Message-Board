@@ -10,14 +10,14 @@
     <ul style="list-style: none;">
       <% messages.map((message) => { %>
       <li>
-        <strong><%= message.user %></strong><br>
-        <%= message.text %><br> 
-        <%= message.added %>
+        <strong><%= message.name %></strong><br>
+        <%= message.message %><br> 
+        <%= message.date %>
       </li>
       <%
         const customLink = '/' + message.user;
       %>
-      <a href="/<%= message.user %>"<%= message.user %>>Detail</a>
+      <a href="/<%= message.name %>"<%= message.name %>>Detail</a>
       <% }) %>
     </ul>
   </body>

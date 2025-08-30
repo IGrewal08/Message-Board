@@ -5,6 +5,7 @@ import indexRouter from './routes/indexRouter.js';
 import newRouter from './routes/newRouter.js';
 
 const app = express();
+app.use(express.urlencoded({ extended: true }));
 const __filename = fileURLToPath(import.meta.url);          // get resolved path to file
 const __dirname = path.dirname(__filename);                 // get name of directory
 
